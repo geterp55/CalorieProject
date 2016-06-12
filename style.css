@@ -4,6 +4,29 @@
 }
 
 #btnSubmit{
+	display: block;
+	margin-bottom: 10px;
+	width: 106.06px;
+	height: 36px;
+
+
 	
-	margin-bottom: 100px;
+	
 }
+#table{
+	margin-top: 100px;
+
+}
+
+#datepicker tbody tr{
+	color:#ffffff;
+}
+
+
+/* Add media queries to change dropdown box and date box to a different format at  768px */
+
+
+
+
+
+

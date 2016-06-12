@@ -37,7 +37,7 @@
                 
                 <div class="input-field col s3">
                   <select>
-                    <option value="" disabled selected>Choose your Food Group</option>
+                    <option value="" disabled selected>Food Group</option>
                     <option value="1">Grains</option>
                     <option value="2">Fruits</option>
                     <option value="3">Vegetables</option>
@@ -49,15 +49,9 @@
                 </div>
 
                 <div class="input-field col s3">
-                  <input id="datepicker" type="text" class="validate">
+                  <input id="datepicker" type="date" class="validate">
                   <label for="date">Start Date</label>
-                      <style type="text/css">
-                        .ui-datepicker {
-                            background: #ffffff;
-                            border: 2px solid #eceff1;
-                            color: #009688;
-                        }
-                      </style>
+                      
                 </div>
               </div>
             </form>
@@ -75,41 +69,73 @@
             <div class="modal-content">
               <!--FORM INSIDE OF MODAL-->
                     <form class="col s12">
-                    <p>Simply enter in a number to represent weekly consumption by category</p>
+                    <p>Simply use the slider to select the a number representing weekly consumption by category</p>
                       <div class="row">
                         <div class="input-field col s2">
-                          <input id="first_name" type="text" class="validate">
-                          <label for="first_name">Grains</label>
+                          <!-- <input id="modalGrains" type="text" class="validate"> -->
+                          <label for="Grains">Grains</label>
+                          <form action="#">
+                            <p class="range-field">
+                              <input type="range" id="mGrains" min="0" max="30" />
+                            </p>
+                          </form>
+                          
                         </div>
                       </div>
                       <div class="row">  
                         <div class="input-field col s2">
-                          <input id="last_name" type="text" class="validate">
+                          <!-- <input id="last_name" type="text" class="validate"> -->
                           <label for="last_name">Fruit</label>
+                          <form action="#">
+                            <p class="range-field">
+                              <input type="range" id="mFruits" min="0" max="30" />
+                            </p>
+                          </form>
+
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s2">
-                          <input id="first_name" type="text" class="validate">
-                          <label for="first_name">Vegetable</label>
+                          <!-- <input id="first_name" type="text" class="validate"> -->
+                          <label for="first_name">Vegetables</label>
+                          <form action="#">
+                            <p class="range-field">
+                              <input type="range" id="mVegetables" min="0" max="30" />
+                            </p>
+                          </form>
                         </div>
                       </div>
                       <div class="row">  
                         <div class="input-field col s2">
-                          <input id="last_name" type="text" class="validate">
-                          <label for="last_name">Milk Product</label>
+                          <!-- <input id="last_name" type="text" class="validate"> -->
+                          <label for="last_name">Milk Products</label>
+                          <form action="#">
+                            <p class="range-field">
+                              <input type="range" id="mMilkProds" min="0" max="30" />
+                            </p>
+                          </form>
                         </div>
                       </div>
                       <div class="row">
                         <div class="input-field col s2">
-                          <input id="first_name" type="text" class="validate">
+                          <!-- <input id="first_name" type="text" class="validate"> -->
                           <label for="first_name">Meat</label>
+                          <form action="#">
+                            <p class="range-field">
+                              <input type="range" id="mMeats" min="0" max="30" />
+                            </p>
+                          </form>
                         </div>
                       </div>
                       <div class="row">  
                         <div class="input-field col s2">
-                          <input id="last_name" type="text" class="validate">
-                          <label for="last_name">Other Foods (fats,oils,sweets)</label>
+                          <!-- <input id="last_name" type="text" class="validate"> -->
+                          <label for="last_name">Other Foods<br> (fats,oils,sweets)</label>
+                          <form action="#">
+                            <p class="range-field">
+                              <input type="range" id="mOtherFoods" min="0" max="30" />
+                            </p>
+                          </form>
                         </div>
                       </div>
                     </form>
@@ -193,6 +219,22 @@
         });
 
 
+
+       //---SLIDER----
+
+       var slider = document.getElementById('test5');
+        noUiSlider.create(slider, {
+         start: [20, 80],
+         connect: true,
+         step: 1,
+         range: {
+           'min': 0,
+           'max': 40
+         },
+         format: wNumb({
+           decimals: 0
+         })
+        });
 
 //-----ABOVE: copy and paste into master js file------------------------------
      
